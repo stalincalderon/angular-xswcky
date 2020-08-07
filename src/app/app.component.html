@@ -15,4 +15,12 @@
 <p>
   Prueba de Dropdown single/multiple select  ngx-bootstrap
 </p>
-<ngx-bootstrap-multiselect name="selectedItems" [(ngModel)]="selectedItems" [items]="dropdownList" [settings]="dropdownSettings"> </ngx-bootstrap-multiselect>
+<!--<ngx-bootstrap-multiselect name="selectedItems" [(ngModel)]="selectedItems" [items]="dropdownList" [settings]="dropdownSettings"> </ngx-bootstrap-multiselect>-->
+<p>------------------------------------------------------</p>
+<pre class="card card-block card-header mb-3">Model: {{selected | json}}</pre>
+<div class="alert alert-danger" *ngIf="noResult">No Results Found</div>
+ 
+<input [(ngModel)]="selected"
+       [typeahead]="states"
+       (typeaheadNoResults)="typeaheadNoResults($event)"
+       class="form-control">

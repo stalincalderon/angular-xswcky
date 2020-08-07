@@ -1,15 +1,21 @@
 import { Component, OnInit } from '@angular/core';
-import { IDropdownSettings } from 'ng-multiselect-dropdown';
 
 @Component({
   selector: 'my-app',
   templateUrl: './app.component.html',
   styleUrls: [ './app.component.css' ]
 })
-export class AppComponent implements OnInit {
-  dropdownList = [];
+export class AppComponent implements OnInit {  
+  /*dropdownList = [];
   selectedItems = [];
-  dropdownSettings = {};  
+  dropdownSettings = {};*/
+  selected: string;
+  noResult = false;  
+  states: string[] = [];
+ 
+  typeaheadNoResults(event: boolean): void {
+    this.noResult = event;
+  } 
 
   ngOnInit(): void {
     //version ng-bootstrap
@@ -35,7 +41,7 @@ export class AppComponent implements OnInit {
     };*/
 
     //version ngx-bootstrap
-    this.dropdownList = [
+    /*this.dropdownList = [
   {"idValue":1,"nameValue":"India"},
   {"idValue":2,"nameValue":"Singapore"},
   {"idValue":3,"nameValue":"Australia"},
@@ -64,7 +70,60 @@ export class AppComponent implements OnInit {
       btnClasses: 'btn btn-primary btn-sm dropdown-toggle',
       //selectionLimit: 3,
       enableFilter: true
-    };
+    };*/
+
+    this.states = [
+      'Alabama',
+      'Alaska',
+      'Arizona',
+      'Arkansas',
+      'California',
+      'Colorado',
+      'Connecticut',
+      'Delaware',
+      'Florida',
+      'Georgia',
+      'Hawaii',
+      'Idaho',
+      'Illinois',
+      'Indiana',
+      'Iowa',
+      'Kansas',
+      'Kentucky',
+      'Louisiana',
+      'Maine',
+      'Maryland',
+      'Massachusetts',
+      'Michigan',
+      'Minnesota',
+      'Mississippi',
+      'Missouri',
+      'Montana',
+      'Nebraska',
+      'Nevada',
+      'New Hampshire',
+      'New Jersey',
+      'New Mexico',
+      'New York',
+      'North Dakota',
+      'North Carolina',
+      'Ohio',
+      'Oklahoma',
+      'Oregon',
+      'Pennsylvania',
+      'Rhode Island',
+      'South Carolina',
+      'South Dakota',
+      'Tennessee',
+      'Texas',
+      'Utah',
+      'Vermont',
+      'Virginia',
+      'Washington',
+      'West Virginia',
+      'Wisconsin',
+      'Wyoming'
+    ];
   }
   onItemSelect(item: any) {
     console.log(item);
