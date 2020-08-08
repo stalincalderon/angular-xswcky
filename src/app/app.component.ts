@@ -125,10 +125,10 @@ export class AppComponent implements OnInit {
       'Wyoming'
     ];
   }
-  onItemSelect(item: any) {
+  /*onItemSelect(item: any) {
     console.log(item);
   }
   onSelectAll(items: any) {
     console.log(items);
-  }
+  }*/
 }
